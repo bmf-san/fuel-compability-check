@@ -16,7 +16,9 @@
         "fuelphp/upload": "2.0.6"
     },
     "require-dev": {
-        "fuel/docs": "dev-1.9/develop"
+        "fuel/docs": "dev-1.9/develop",
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpcompatibility/php-compatibility": "^9.3"
     },
     "suggest": {
         "dwoo/dwoo" : "Allow Dwoo templating with the Parser package",
@@ -39,7 +41,8 @@
     "scripts": {
         "post-install-cmd": [
             "php oil r install"
-        ]
+        ],
+		"sniffer:php8": "phpcs -p ./fuel --standard=fuel/vendor/phpcompatibility/php-compatibility/PHPCompatibility --runtime-set testVersion 8.0"
     },
     "minimum-stability": "stable"
 }
