@@ -18,7 +18,8 @@
     "require-dev": {
         "fuel/docs": "dev-1.9/develop",
         "squizlabs/php_codesniffer": "^3.6",
-        "phpcompatibility/php-compatibility": "^9.3"
+        "phpcompatibility/php-compatibility": "^9.3",
+        "rector/rector": "^0.12.17"
     },
     "suggest": {
         "dwoo/dwoo" : "Allow Dwoo templating with the Parser package",
@@ -42,7 +43,8 @@
         "post-install-cmd": [
             "php oil r install"
         ],
-		"sniffer:php8": "phpcs -p ./fuel --standard=fuel/vendor/phpcompatibility/php-compatibility/PHPCompatibility --runtime-set testVersion 8.0"
+		"sniffer:php8": "phpcs -p ./fuel --standard=fuel/vendor/phpcompatibility/php-compatibility/PHPCompatibility --runtime-set testVersion 8.0",
+		"rector:php": "rector process fuel/core --dry-run"
     },
     "minimum-stability": "stable"
 }
